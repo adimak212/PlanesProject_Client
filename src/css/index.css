@@ -1,0 +1,139 @@
+body{
+  margin: 0;
+}
+
+.ia-wrap {background: #0b1020; color: #eef1f7; min-height: 100dvh; direction: rtl; }
+
+
+/* רשימת שורות (מטוס אחד בכל שורה) */
+.ia-list { display: grid; grid-template-columns: 1fr; gap: 12px; max-width: 1100px; margin: 0 auto; }
+
+/* שורה אחת */
+.ia-row {
+  
+  display: flex;
+  align-items: stretch;
+  background: #121832;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* צד שמאל: תמונה + שם */
+.ia-left { display: flex; align-items: center; gap: 16px; padding: 12px 16px; min-width: 0; flex: 1 1 auto;  color: white;}
+.ia-thumb-wrap { display: block; flex-shrink: 0; }
+.ia-thumb { width: 220px; height: 140px; object-fit: cover; display: block; border-radius: 10px; }
+.ia-name { margin: 0; font-size: 16px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* קו מפריד אנכי */
+.ia-sep { width: 1px; background: rgba(255,255,255,0.14); margin: 8px 0; }
+
+/* צד ימין: מדינה + שנה */
+.ia-right { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 12px 18px; min-width: 220px; }
+.ia-field { display: flex; gap: 8px; align-items: baseline; }
+.ia-label { opacity: 0.75; min-width: 44px; }
+.ia-value { font-weight: 600; }
+
+/* סטטוסים */
+.ia-loader-wrap { display: flex; justify-content: center; padding: 24px; }
+.ia-loader { width: 28px; height: 28px; border-radius: 50%; border: 3px solid rgba(255,255,255,0.25); border-top-color: #fff; animation: ia-spin .9s linear infinite; }
+.ia-sentinel { height: 1px; }
+.ia-end { text-align: center; padding: 20px; opacity: 0.7; }
+.ia-error { text-align: center; padding: 12px; max-width: 600px; margin: 12px auto; background: #3a1c1c; border: 1px solid #7c2d2d; border-radius: 12px; }
+
+/* רספונסיביות */
+@media (max-width: 700px) {
+  .ia-thumb { width: 44vw; height: 28vw; }
+  .ia-right { min-width: 180px; }
+}
+
+/* אנימציה */
+@keyframes ia-spin { from { transform: rotate(0) } to { transform: rotate(360deg) } }
+
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #1a73e8;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+form input:focus {
+  border-color: #1a73e8;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #1669c1;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  box-sizing: border-box;
+  font-size: 20px;
+  padding: 10px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none; 
+  transition: transform 0.2s ease, font-weight 0.2s ease;
+}
+
+.link:hover{
+  box-sizing: border-box;
+  font-weight: bolder;
+  text-decoration: none; 
+  transform: scale(1.3); /* מגדיל ויזואלית */
+  cursor: pointer;
+}
+
+.active{
+  box-sizing: border-box;
+  text-decoration: none; 
+  color: rgb(61, 132, 255);
+  font-weight:bolder ;
+}
+

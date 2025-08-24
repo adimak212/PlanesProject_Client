@@ -1,0 +1,100 @@
+/* צבעים בסיסיים */
+:root{
+  --bg: #0b1324;
+  --text: #e8eefc;
+  --muted: #b6c2d9;
+  --accent: #3aa3ff;         /* צבע לשם המטוס */
+  --white: #ffffff;          /* בורדר הכרטיס */
+  --glow: #3aa3ff;           /* הקו הזוהר */
+}
+
+*{ box-sizing: border-box; }
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+}
+
+main{ padding: 24px 12px; }
+
+/* עוטף רשימת כרטיסים */
+.ia-list{
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+/* כרטיס של מטוס */
+.ia-card{
+  display: flex;
+  grid-template-columns: 1fr 6px 1fr; /* שמאל | קו | ימין */
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border: 2px solid var(--white);   /* בורדר לבן לכל הכרטיס */
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(2px);
+}
+
+/* הצד השמאלי – שנה ומדינה */
+.ia-meta{
+  display: grid;
+  gap: 6px;
+  justify-items: start;  /* מיושר לשמאל */
+  text-align: left;
+  width: 50%;
+}
+.ia-field{ display: flex; gap: 8px; }
+.ia-label{ color: var(--muted); font-weight: 600; min-width: 64px; }
+.ia-value{ color: var(--text); }
+
+/* הקו הזוהר באמצע */
+.ia-divider{
+  width: 6px;
+  height: 100%;
+  border-radius: 6px;
+  background:  var(--accent);
+  box-shadow: 0 0 12px var(--glow), 0 0 28px rgba(58,163,255,.55);
+}
+
+/* הצד הימני – שם המטוס */
+.ia-name{
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: white;     /* צבע לשם */
+  text-align: right;        /* מיושר לימין */
+  letter-spacing: .3px;
+  width: 30%;
+}
+
+.button {
+  width: 10% ;
+}
+.toDel {
+  display: none;
+}
+
+/* רספונסיבי: במובייל שני חלקים אחד מעל השני, הקו באמצע רוחבית */
+@media (max-width: 720px){
+  .ia-card{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .ia-divider{
+    width: 100%;
+    height: 6px;
+  }
+  .ia-name{ text-align: center; }
+  .ia-meta{ justify-items: center; text-align: center; }
+}
+
+img{
+  width: 20%;
+  height: 100%;
+}
+

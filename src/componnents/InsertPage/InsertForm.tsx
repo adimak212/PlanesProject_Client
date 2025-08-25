@@ -59,7 +59,7 @@ function InsertFormNew() {
       else setMessage("Error in upload");
     } catch (err) {
       setMessage("Error in upload");
-      console.error(err);
+      console.error(err.massege);
     }
 
     if (timer) clearTimeout(timer);

@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { Link, NavLink, Route, Routes, useNavigate } from "react-router-dom";
 import "../src/css/index.css"
-import AircraftTimeline from "../src/pages/galleryPage"
-import AddAircraftForm from "../src/pages/InsertPage"
+import AircraftTimeline from "./pages/galleryPage.tsx"
+import AddAircraftForm from "./pages/InsertPage.tsx"
 
 
 function Layout({ children }) {
@@ -28,13 +28,13 @@ function AddAircraftPage() {
   const navigate = useNavigate();
   return (
     <div style={{ maxWidth: 900, margin: "0 auto" }}>
-      <AddAircraftForm onSaved={() => navigate("/gallery")} actionUrl="http://localhost:5173/api/aircraft"/>
+      <AddAircraftForm/>
     </div>
   );
 }
 
 function GalleryPage() {
-  return <AircraftTimeline pageSize={8} endpoint="http://localhost:5173/api/aircraft"/>;
+  return <AircraftTimeline/>;
 }
 
 export default function App() {

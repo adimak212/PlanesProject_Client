@@ -1,8 +1,8 @@
 import React from 'react'
-import InfinteScroll from "../componnents/galleryPage/InfiniteScroll.jsx"
+import ScrollComp from "../componnents/galleryPage/infinityScroll.tsx"
 function galleryPage() {
   return (
-    <InfinteScroll/>
+    <ScrollComp/>
   )
 }
 
